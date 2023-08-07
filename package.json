@@ -1,0 +1,40 @@
+{
+  "name": "ekubo-tests",
+  "version": "0.0.0",
+  "scripts": {
+    "format": "prettier --check \"./**/*.ts\"",
+    "format:fix": "prettier --write \"./**/*.ts\"",
+    "lint": "eslint --ext .ts test scripts",
+    "lint:fix": "yarn lint --fix",
+    "compile": "yarn compile:l1 && yarn compile:l2",
+    "devnet": "starknet-devnet --hide-server-logs --seed 0 --sierra-compiler-path /home/maciejka/projects/cairo/target/release/starknet-sierra-compile ",
+    "test": "ts-mocha 'test/**/*.spec.{ts,tsx}'",
+    "wait-then-test": "wait-on tcp:5050 && yarn test",
+    "test:ci": "concurrently './scripts/devnet.sh' './scripts/test.sh'"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.3.5",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^18.11.13",
+    "@types/request": "^2.48.8",
+    "@typescript-eslint/eslint-plugin": "^5.46.1",
+    "@typescript-eslint/parser": "^5.46.1",
+    "axios": "^1.4.0",
+    "chai": "^4.3.7",
+    "concurrently": "^7.6.0",
+    "eslint": "^8.29.0",
+    "eslint-config-typestrict": "^1.0.5",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-no-only-tests": "^3.1.0",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
+    "eslint-plugin-sonarjs": "^0.17.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "mocha": "^10.2.0",
+    "prettier": "^2.8.1",
+    "starknet": "^5.18.0",
+    "ts-mocha": "^10.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6",
+    "wait-on": "^6.0.1"
+  }
+}

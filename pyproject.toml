@@ -1,0 +1,9 @@
+[tool.poetry]
+name = "ekubo-tests"
+version = "0.0.0"
+description = "Ekubo Tests"
+authors = ["Ekubo"]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.10"
+starknet-devnet = "0.6.0a0"
